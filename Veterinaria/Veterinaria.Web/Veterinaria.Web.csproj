@@ -169,10 +169,15 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Clase\Utilities.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ConsultsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\OwnersController.cs" />
+    <Compile Include="Controllers\PetsController.cs" />
     <Compile Include="Controllers\PrincipalController.cs" />
+    <Compile Include="Controllers\VeterinariesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -180,10 +185,20 @@
     <Compile Include="Migrations\202005232139433_FirstMigration.Designer.cs">
       <DependentUpon>202005232139433_FirstMigration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202005240045037_UpdateDb.cs" />
+    <Compile Include="Migrations\202005240045037_UpdateDb.Designer.cs">
+      <DependentUpon>202005240045037_UpdateDb.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Consult.cs" />
+    <Compile Include="Models\History.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\Manager.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Owner.cs" />
+    <Compile Include="Models\Pet.cs" />
+    <Compile Include="Models\Veterinary.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -347,6 +362,26 @@
     <Content Include="Scripts\popper.js.map" />
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
+    <Content Include="Views\Consults\Create.cshtml" />
+    <Content Include="Views\Consults\Delete.cshtml" />
+    <Content Include="Views\Consults\Details.cshtml" />
+    <Content Include="Views\Consults\Edit.cshtml" />
+    <Content Include="Views\Consults\Index.cshtml" />
+    <Content Include="Views\Pets\Create.cshtml" />
+    <Content Include="Views\Pets\Delete.cshtml" />
+    <Content Include="Views\Pets\Details.cshtml" />
+    <Content Include="Views\Pets\Edit.cshtml" />
+    <Content Include="Views\Pets\Index.cshtml" />
+    <Content Include="Views\Veterinaries\Create.cshtml" />
+    <Content Include="Views\Veterinaries\Delete.cshtml" />
+    <Content Include="Views\Veterinaries\Details.cshtml" />
+    <Content Include="Views\Veterinaries\Edit.cshtml" />
+    <Content Include="Views\Veterinaries\Index.cshtml" />
+    <Content Include="Views\Owners\Create.cshtml" />
+    <Content Include="Views\Owners\Delete.cshtml" />
+    <Content Include="Views\Owners\Details.cshtml" />
+    <Content Include="Views\Owners\Edit.cshtml" />
+    <Content Include="Views\Owners\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -366,6 +401,15 @@
     <EmbeddedResource Include="Migrations\202005232139433_FirstMigration.resx">
       <DependentUpon>202005232139433_FirstMigration.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202005240045037_UpdateDb.resx">
+      <DependentUpon>202005240045037_UpdateDb.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Veterinaria.Common\Veterinaria.Common.csproj">
+      <Project>{ba99bd7b-52a2-498a-aaa4-c0f52079fece}</Project>
+      <Name>Veterinaria.Common</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
