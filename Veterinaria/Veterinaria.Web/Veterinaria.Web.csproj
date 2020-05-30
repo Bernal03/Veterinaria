@@ -197,6 +197,14 @@
     <Compile Include="Migrations\202005302136040_ThirdMigration.Designer.cs">
       <DependentUpon>202005302136040_ThirdMigration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202005302215535_AddForeignPet.cs" />
+    <Compile Include="Migrations\202005302215535_AddForeignPet.Designer.cs">
+      <DependentUpon>202005302215535_AddForeignPet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202005302254031_UpdateUser2.cs" />
+    <Compile Include="Migrations\202005302254031_UpdateUser2.Designer.cs">
+      <DependentUpon>202005302254031_UpdateUser2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Consult.cs" />
@@ -390,6 +398,7 @@
     <Content Include="Views\Owners\Details.cshtml" />
     <Content Include="Views\Owners\Edit.cshtml" />
     <Content Include="Views\Owners\Index.cshtml" />
+    <Content Include="Views\Pets\AllPets.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -417,6 +426,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202005302136040_ThirdMigration.resx">
       <DependentUpon>202005302136040_ThirdMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202005302215535_AddForeignPet.resx">
+      <DependentUpon>202005302215535_AddForeignPet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202005302254031_UpdateUser2.resx">
+      <DependentUpon>202005302254031_UpdateUser2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

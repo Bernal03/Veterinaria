@@ -39,10 +39,10 @@
                     </li>
                 }
 
-                @if (User.IsInRole("Veterinary"))
+                @if (User.IsInRole("Veterinary") || User.IsInRole("Admin"))
                 {
                     <li class="nav-item">
-                        <a class="nav-link" href="@Url.Action("Index", "Consults")">Consulta</a>
+                        <a class="nav-link" href="@Url.Action("Index", "Consults")">Consultas</a>
                     </li>
                 }
 
@@ -51,6 +51,14 @@
                 {
                     <li class="nav-item">
                         <a class="nav-link" href="@Url.Action("Index", "Pets")">Mascotas</a>
+                    </li>
+
+                }
+
+                @if (User.IsInRole("Admin"))
+                {
+                    <li class="nav-item">
+                        <a class="nav-link" href="@Url.Action("AllPets", "Pets")">Mascotas</a>
                     </li>
 
                 }
