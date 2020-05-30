@@ -193,6 +193,10 @@
     <Compile Include="Migrations\202005290427596_SecondMigration.Designer.cs">
       <DependentUpon>202005290427596_SecondMigration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202005302136040_ThirdMigration.cs" />
+    <Compile Include="Migrations\202005302136040_ThirdMigration.Designer.cs">
+      <DependentUpon>202005302136040_ThirdMigration.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Consult.cs" />
@@ -410,6 +414,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202005290427596_SecondMigration.resx">
       <DependentUpon>202005290427596_SecondMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202005302136040_ThirdMigration.resx">
+      <DependentUpon>202005302136040_ThirdMigration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

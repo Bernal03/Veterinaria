@@ -26,13 +26,42 @@
                 <li class="nav-item">
                     <a class="nav-link" href="@Url.Action("Contact", "Home")">Contacto</a>
                 </li>
+
+                @if (User.IsInRole("Admin"))
+                {
+                    //Usuarios
+                    <li class="nav-item">
+                        <a class="nav-link" href="@Url.Action("Index", "Users")">Usuarios</a>
+                    </li>
+                    //Medicos
+                    <li class="nav-item">
+                        <a class="nav-link" href="@Url.Action("Index", "Veterinary")">Medico</a>
+                    </li>
+                }
+
+                @if (User.IsInRole("Veterinary"))
+                {
+                    <li class="nav-item">
+                        <a class="nav-link" href="@Url.Action("Index", "Consults")">Consulta</a>
+                    </li>
+                }
+
+
+                @if (User.IsInRole("Owner"))
+                {
+                    <li class="nav-item">
+                        <a class="nav-link" href="@Url.Action("Index", "Pets")">Mascotas</a>
+                    </li>
+
+                }
             </ul>
-            <span class="navbar-text text-white">
-                <a href="@Url.Action("Register", "Account")" class="text-white" style="text-decoration: none">Registro</a> |
-                <a href="@Url.Action("Login", "Account")" class="text-white" style="text-decoration: none">Iniciar Sesión</a>
+
+            <span class="navbar-text">
+                @Html.Partial("_LoginPartial")
             </span>
         </div>
     </nav>
+
     <div class="container body-content">
         @RenderBody()
         <hr />
