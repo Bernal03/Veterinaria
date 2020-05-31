@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Web;
@@ -58,10 +59,18 @@ namespace Veterinaria.Web.Controllers
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(Pet pet)
+        public ActionResult Create(Pet pet, HttpPostedFileBase hpb)
         {
             if (ModelState.IsValid)
             {
+                
+                if(hpb!=null)
+                {
+                    var photo = Path.GetFileName(hpb.FileName);
+                    var direction = "~/Content/img/" + pet.Name + "_" + photo;
+                    hpb.SaveAs(Server.MapPath(direction));
+                    pet.ImgUrl = pet.Name + "_" + photo;
+                }
                 var userId = User.Identity.GetUserId();
                 var own = db.Owners.Where(o => o.UserId == userId).FirstOrDefault();
                 pet.OwnerId = own.Id;

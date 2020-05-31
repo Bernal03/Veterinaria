@@ -3,79 +3,71 @@
 @{
     ViewBag.Title = "Details";
 }
+        <div class="row justify-content-center col-md-12">
+            <div class="col-md-6">
+                <div class="row justify-content-center">
+                    <div class="card mb-3">
+                        <div class="card-header bg-info">
+                            <h5 class="text-white text-center">Fotografía</h5>
+                        </div>
+                        <div class="card-body">
+                            @if (Model.ImgUrl == null)
+                            {
+                                <img src="~/Content/img/Userunknown.png" class="img-thumbnail" width="400px" />
+                            }
+                            else if (Model.ImgUrl != null)
+                            {
+                                <img src="~/Content/img/@Model.ImgUrl" />
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card mb-3">
+                    <div class="card-header py-2 bg-info">
+                        <h2 class="text-center m-0 text-white">@Model.Name</h2>
+                    </div>
+                    <div class="card-body">
+                        <table class="table table-sm">
+                            <tr>
+                                <td>Nombre: </td>
+                                <td>@Model.Name</td>
+                            </tr>
+                            <tr>
+                                <td>Tipo de mascota: </td>
+                                <td>@Model.PetType</td>
+                            </tr>
+                            <tr>
+                                <td>Edad: </td>
+                                <td>@Model.Age Meses</td>
+                            </tr>
+                            <tr>
+                                <td>Fecha de nacimiento: </td>
+                                <td>@Model.BirthDate.ToShortDateString()</td>
+                            </tr>
+                            <tr>
+                                <td>Raza: </td>
+                                <td>@Model.Raza</td>
+                            </tr>
+                            <tr>
+                                <td>Color: </td>
+                                <td>@Model.Color</td>
+                            </tr>
+                            <tr>
+                                <td>Peso: </td>
+                                <td>@Model.Weight Kg</td>
+                            </tr>
+                            <tr>
+                                <td>Altura: </td>
+                                <td>@Model.Height M</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-<h2>Details</h2>
-
-<div>
-    <h4>Pet</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Name)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Name)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.PetType)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.PetType)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Age)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Age)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.BirthDate)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.BirthDate)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Color)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Color)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Raza)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Raza)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Weight)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Weight)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Height)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Height)
-        </dd>
-
-    </dl>
-</div>
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
     @Html.ActionLink("Back to List", "Index")
